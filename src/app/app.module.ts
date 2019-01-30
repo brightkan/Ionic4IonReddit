@@ -11,9 +11,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+// Added by Bright
+import {DetailsPage} from './reddits/details'
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+  DetailsPage],
   entryComponents: [
+    DetailsPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   //import HttpClientModule in order to use HttpClient for http requests

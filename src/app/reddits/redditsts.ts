@@ -2,13 +2,16 @@
 import { Component } from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {RedditService} from '../services/reddit.service';
+import {DetailsPage } from './details';
 @Component({
   selector: 'reddits',
   templateUrl: 'reddits.html',
 })
+
 export class RedditsPage {
     items:any;
-    constructor(navCtrl:NavController,private redditService:RedditService){
+    
+    constructor(public navCtrl:NavController,private redditService:RedditService){
      
      }
 
@@ -17,16 +20,22 @@ export class RedditsPage {
       this.getPosts('sports', 5)
     }
 
-    getPosts(category, limit){
-      // try {
+    getPosts(category, limit){    
         this.redditService.getPosts(category,limit).subscribe(res =>{
-          this.items = res.data.children;
+          let response = JSON.parse(res);
+          this.items = response.data.children;
         })
-        
-      // } catch (error) {
-        // console.log("No internet Access")
-      // }
- 
     }
+
+    // viewItem(item){
+    //     this.navCtrl.goForward(DetailsPage, {
+    //       item: item
+    //     })
+    // }
     
+    viewItem(item){
+      this.navCtrl.navigateForward( DetailsPage, {
+          item: item
+      
+  })
 }
