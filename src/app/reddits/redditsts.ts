@@ -5,11 +5,9 @@ import {RedditService} from '../services/reddit.service';
 @Component({
   selector: 'reddits',
   templateUrl: 'reddits.html',
-  
-  
 })
 export class RedditsPage {
-
+    items:any;
     constructor(navCtrl:NavController,private redditService:RedditService){
      
      }
@@ -20,14 +18,14 @@ export class RedditsPage {
     }
 
     getPosts(category, limit){
-      try {
+      // try {
         this.redditService.getPosts(category,limit).subscribe(res =>{
-          console.log(res)
+          this.items = res.data.children;
         })
         
-      } catch (error) {
-        console.log("No internet Access")
-      }
+      // } catch (error) {
+        // console.log("No internet Access")
+      // }
  
     }
     

@@ -1,7 +1,8 @@
 // File created manually by Bright
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs'
+import { map } from 'rxjs/operators';
+import { Observable, of, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -18,6 +19,8 @@ export class RedditService{
 
     getPosts(category, limit){
         return this.http.get(this.baseUrl+"/"+category+"/top.json?limit="+limit)
-         .map(res => res.json());
+         .pipe(
+            map(res => JSON.stringify(res))
+         ) 
     }
 }
