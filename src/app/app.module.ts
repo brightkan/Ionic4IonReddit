@@ -11,21 +11,21 @@ import { AppComponent } from './app.component';
 
 //Added imports by Bright
 
-import { RedditsPage } from './reddits/redditsts'; // Reddits Ts file class imported
+//import { RedditsPage } from './reddits/redditsts'; // Reddits Ts file class imported
 import {SettingsPage} from './settings/settings';  // Settings Ts file class imported
 
 
 @NgModule({
   declarations: [AppComponent,
    // Added by Bright
-   RedditsPage,
+  // RedditsPage,
    SettingsPage
    //End what Bright added
    ],
    
   entryComponents: [
     // Added by Bright
-    RedditsPage,
+   // RedditsPage,
     SettingsPage
     //End what Bright added
   ],
