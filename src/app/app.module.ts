@@ -9,25 +9,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//Added imports by Bright
-
-//import { RedditsPage } from './reddits/redditsts'; // Reddits Ts file class imported
-import {SettingsPage} from './settings/settings';  // Settings Ts file class imported
-
 
 @NgModule({
-  declarations: [AppComponent,
-   // Added by Bright
-  // RedditsPage,
-   SettingsPage
-   //End what Bright added
-   ],
-   
+  declarations: [AppComponent,],
   entryComponents: [
-    // Added by Bright
-   // RedditsPage,
-    SettingsPage
-    //End what Bright added
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
