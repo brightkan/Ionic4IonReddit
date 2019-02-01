@@ -1,17 +1,20 @@
 //This file was created manually by Bright
 import { Component } from '@angular/core';
-import {NavController} from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import {RedditService} from '../services/reddit.service';
-import {DetailsPage } from './details';
+import { NavigationExtras, Router}  from '@angular/router'
+
+
 @Component({
   selector: 'reddits',
   templateUrl: 'reddits.html',
 })
 
 export class RedditsPage {
+
     items:any;
     
-    constructor(public navCtrl:NavController,private redditService:RedditService){
+    constructor(private router:Router,private redditService:RedditService){
      
      }
 
@@ -27,15 +30,8 @@ export class RedditsPage {
         })
     }
 
-    // viewItem(item){
-    //     this.navCtrl.goForward(DetailsPage, {
-    //       item: item
-    //     })
-    // }
-    
-    viewItem(item){
-      this.navCtrl.navigateForward( DetailsPage, {
-          item: item
-      
-  })
+    viewItem(){
+        this.router.navigateByUrl('details');
+   
+    }
 }

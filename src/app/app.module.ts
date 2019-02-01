@@ -16,10 +16,8 @@ import { AppComponent } from './app.component';
 import {DetailsPage} from './reddits/details'
 
 @NgModule({
-  declarations: [AppComponent,
-  DetailsPage],
+  declarations: [AppComponent],
   entryComponents: [
-    DetailsPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   //import HttpClientModule in order to use HttpClient for http requests
